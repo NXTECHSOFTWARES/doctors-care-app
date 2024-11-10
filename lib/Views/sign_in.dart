@@ -1,10 +1,20 @@
+import 'package:community_material_icon/community_material_icon.dart';
+import 'package:doctors_care/Commons/custom_textfield.dart';
 import 'package:doctors_care/Commons/reusable_text.dart';
 import 'package:doctors_care/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class MySignInPage extends StatelessWidget {
+class MySignInPage extends StatefulWidget {
   const MySignInPage({super.key});
+
+  @override
+  State<MySignInPage> createState() => _MySignInPageState();
+}
+
+class _MySignInPageState extends State<MySignInPage> {
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +78,11 @@ class MySignInPage extends StatelessWidget {
                       ReusableText(text: "SIGN IN", fontSize: 32, color: Colors.white, fontFamily: 'Domine', addShadow: true,),
                       ReusableText(text: "enter your credantials to proceed", fontSize: 10, color: Colors.white, fontFamily: 'Domine', addShadow: false,),
                     ],
-                  )
+                  ),
+                  SizedBox(height: 80.h,),
+                  const CustomTextField(hintText: 'email address', icon: Icons.email_rounded, ),
+                  SizedBox(height: 20.h,),
+                  const CustomTextField(hintText: 'password', icon: FontAwesomeIcons.key, ),
                 ],
               ),
             ),
